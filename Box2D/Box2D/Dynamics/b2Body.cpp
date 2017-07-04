@@ -233,6 +233,7 @@ void b2Body::DestroyFixture(b2Fixture* fixture)
 	b2Fixture** node = &m_fixtureList;
 #if B2_ASSERT_ENABLED
 	bool found = false;
+#endif
 	while (*node != nullptr)
 	{
 		if (*node == fixture)
