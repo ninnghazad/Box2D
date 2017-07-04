@@ -17,7 +17,7 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include <Box2D/Collision/Shapes/b2PolygonShape.h>
+#include "Box2D/Collision/Shapes/b2PolygonShape.h"
 #include <new>
 
 b2Shape* b2PolygonShape::Clone(b2BlockAllocator* allocator) const
@@ -183,6 +183,7 @@ void b2PolygonShape::Set(const b2Vec2* vertices, int32 count)
 
 	for (;;)
 	{
+		b2Assert(m < b2_maxPolygonVertices);
 		hull[m] = ih;
 
 		int32 ie = 0;

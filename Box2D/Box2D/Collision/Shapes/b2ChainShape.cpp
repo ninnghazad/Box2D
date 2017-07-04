@@ -17,8 +17,8 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include <Box2D/Collision/Shapes/b2ChainShape.h>
-#include <Box2D/Collision/Shapes/b2EdgeShape.h>
+#include "Box2D/Collision/Shapes/b2ChainShape.h"
+#include "Box2D/Collision/Shapes/b2EdgeShape.h"
 #include <new>
 #include <memory.h>
 #include <string.h>
@@ -31,14 +31,19 @@ b2ChainShape::~b2ChainShape()
 void b2ChainShape::Clear()
 {
 	b2Free(m_vertices);
-	m_vertices = NULL;
+	m_vertices = nullptr;
 	m_count = 0;
 }
 
 void b2ChainShape::CreateLoop(const b2Vec2* vertices, int32 count)
 {
-	b2Assert(m_vertices == NULL && m_count == 0);
+	b2Assert(m_vertices == nullptr && m_count == 0);
 	b2Assert(count >= 3);
+	if (count < 3)
+	{
+		return;
+	}
+
 	for (int32 i = 1; i < count; ++i)
 	{
 #if B2_ASSERT_ENABLED
@@ -61,7 +66,7 @@ void b2ChainShape::CreateLoop(const b2Vec2* vertices, int32 count)
 
 void b2ChainShape::CreateChain(const b2Vec2* vertices, int32 count)
 {
-	b2Assert(m_vertices == NULL && m_count == 0);
+	b2Assert(m_vertices == nullptr && m_count == 0);
 	b2Assert(count >= 2);
 	for (int32 i = 1; i < count; ++i)
 	{

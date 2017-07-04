@@ -32,7 +32,7 @@ public:
 		m_hit = false;
 	}
 
-	float32 ReportFixture(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction)
+	float32 ReportFixture(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction) override
 	{
 		b2Body* body = fixture->GetBody();
 		void* userData = body->GetUserData();
@@ -72,7 +72,7 @@ public:
 		m_hit = false;
 	}
 
-	float32 ReportFixture(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction)
+	float32 ReportFixture(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32) override
 	{
 		B2_NOT_USED(fraction);
 		b2Body* body = fixture->GetBody();
@@ -118,7 +118,7 @@ public:
 		m_count = 0;
 	}
 
-	float32 ReportFixture(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32 fraction)
+	float32 ReportFixture(b2Fixture* fixture, const b2Vec2& point, const b2Vec2& normal, float32) override
 	{
 		B2_NOT_USED(fraction);
 		b2Body* body = fixture->GetBody();

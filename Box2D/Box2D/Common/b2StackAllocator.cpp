@@ -16,8 +16,8 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include <Box2D/Common/b2StackAllocator.h>
-#include <Box2D/Common/b2Math.h>
+#include "Box2D/Common/b2StackAllocator.h"
+#include "Box2D/Common/b2Math.h"
 #include <string.h>
 
 b2StackAllocator::b2StackAllocator()
@@ -111,7 +111,7 @@ void b2StackAllocator::Free(void* p)
 	m_allocation -= entry->size;
 	--m_entryCount;
 
-	p = NULL;
+	p = nullptr;
 }
 
 int32 b2StackAllocator::GetMaxAllocation() const

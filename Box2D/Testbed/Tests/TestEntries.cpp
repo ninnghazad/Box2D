@@ -99,7 +99,7 @@
 
 TestEntry g_testEntries[] =
 {
-	{"Sandbox", Sandbox::Create},
+	{"Character Collision", CharacterCollision::Create},
 	{"Add Pair Stress Test", AddPair::Create},
 	{"AntiPointy", AntiPointy::Create},
 	{"Apply Force", ApplyForce::Create},
